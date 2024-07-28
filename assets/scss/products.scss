@@ -1,0 +1,285 @@
+// breadcrumb start
+.breadcrumb {
+    padding: 80px 0;
+    .container {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: #00000080;
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 21px;
+            }
+            li:last-child {
+                color: #000;
+            }
+        }
+    }
+}
+
+// breadcrumb end
+// products start
+.product {
+    &__content {
+        padding-bottom: 94px;
+        .container {
+            display: flex;
+            gap: 70px;
+        }
+    }
+    &__images {
+        display: flex;
+        gap: 30px;
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 600px;
+            overflow-y: auto;
+            .wrapper {
+                border-radius: 4px;
+                background: #f5f5f5;
+                padding: 16px 24px;
+                width: 170px;
+                height: 138px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        .image__wrapper {
+            padding: 154px 27px 131px 27px;
+            width: 500px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F5F5F5;
+            border-radius: 4px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    &__info {
+        &-title {
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0.72px;
+        }
+        &-rating {
+            padding: 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            span {
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                color: #000000;
+            }
+            .reviewers {
+                font-weight: 400;
+                line-height: 21px;
+                color: #00000080;
+            }
+        }
+        &-price {
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.72px;
+        }
+        &-desc {
+            padding: 24px 0;
+            padding-right: 27px;
+            color: #000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 21px;
+        }
+        &-colours,
+        &-size {
+            padding-top: 24px;
+            padding-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            span {
+                color: #000;
+                font-family: 'Inter', sans-serif;
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.6px;
+            }
+            img {
+                cursor: pointer;
+            }
+        }
+        &-size {
+            .contents {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+                button {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(0, 0, 0, 0.50);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #000;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 21px;
+                    transition: all .3s ease;
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        background: #DB4444;
+                        color: #fff;
+                        border-color: #DB4444;
+                    }
+                }
+            }
+        }
+        &-buy {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-quantity {
+            width: 170px;
+            display: flex;
+            align-items: center;
+            height: 44px;
+            button {
+                width: 40px;
+                height: 100%;
+                border-radius: 4px;
+                border: 1px solid rgba(0, 0, 0, 0.50);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #000;
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 21px;
+                transition: all .3s ease;
+                &:first-child {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                &:last-child {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    background: #DB4444;
+                    color: #fff;
+                    border-color: #DB4444;
+                }
+            }
+            input {
+                width: 80px;
+                height: 100%;
+                outline: none;
+                border: 1px solid rgba(0, 0, 0, 0.50);
+                border-left: none;
+                border-right: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #000;
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 21px;
+                text-align: center;
+                appearance: none;
+            }
+        }
+        .buy-now {
+            width: fit-content;
+            height: 44px;
+            border-radius: 4px;
+            border: 2px solid #DB4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #DB4444;
+            padding: 10px 48px;
+            color: #FAFAFA;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            transition: all .3s ease;
+            &:hover {
+                background: transparent;
+                color: #DB4444;
+                border: 2px solid #DB4444;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .product {
+        &__content {
+            .container {
+                flex-direction: column;
+                gap: 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product {
+        &__images {
+            flex-direction: column-reverse;
+            &-list {
+                flex-direction: row;
+                overflow-y: hidden;
+                overflow-x: auto;
+                height: fit-content;
+                width: 100%;
+                .wrapper {
+                    min-width: 170px;
+                }
+            }
+            .image__wrapper {
+                width: 100%;
+            }
+        }
+    }
+}

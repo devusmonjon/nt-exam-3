@@ -1,0 +1,11 @@
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/assets/css",
+            "savePathReplacementPairs": null
+        }
+    ],
+    "liveServer.settings.port": 5505
+}

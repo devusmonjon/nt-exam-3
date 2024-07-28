@@ -1,0 +1,89 @@
+<section class="breadcrumb">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="#">Account</a>
+                <span>/</span>
+            </li>
+            <li>
+                <a href="#">{{data.category}}</a>
+                <span>/</span>
+            </li>
+            <li>{{data.title}}</li>
+        </ul>
+    </div>
+</section>
+<section class="product__content" id="product__content">
+    <div class="container">
+        <div class="product__images">
+            <div class="product__images-list">
+                {{#each data.images }}
+                <div class="wrapper">
+                    <img src="{{this}}" alt="Product Image">
+                </div>
+                {{/each}}
+            </div>
+            <div class="image__wrapper">
+                <img src="{{data.thumbnail}}" alt="{{data.title}}">
+            </div>
+        </div>
+        <div class="product__info">
+            <h1 class="product__info-title">{{data.title}}</h1>
+            <div class="product__info-rating">
+                <div class="stars" data-count="2.76">
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="reviewers">({{data.reviews.length}} Reviewers)</span>
+                <div class="stock"><span style="padding-left: 8px;padding-right: 16px;">|</span> <span
+                        style="color: {{data.inStock.color}};">{{data.inStock.text}}</span></div>
+            </div>
+            <h1 class="product__info-price">${{data.price}}</h1>
+            <p class="product__info-desc">
+                {{data.description}}
+            </p>
+            <hr>
+            <div class="product__info-colours">
+                <span>Colours:</span>
+                <img src="/images/colors.png" alt="Colors">
+            </div>
+            <div class="product__info-size">
+                <span>Size:</span>
+                <div class="contents">
+                    <button>XS</button>
+                    <button>S</button>
+                    <button class="active">M</button>
+                    <button>L</button>
+                    <button>XL</button>
+                </div>
+            </div>
+            <div class="product__info-buy">
+                <div class="product__info-quantity">
+                    <button class="quantity__btn" onclick="decrement()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 12H4" stroke="black" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <input type="text" min="1" max="100" value="1" readonly id="quantity" data-max="{{data.stock}}">
+                    <button class="quantity__btn" onclick="increment()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 20V12M12 12V4M12 12H20M12 12H4" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <button type="button" class="product__info-btn text-light poppins buy-now">Buy Now</button>
+                <button type="button" class="product__info-btn heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path
+                            d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
+                            stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

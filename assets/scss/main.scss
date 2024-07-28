@@ -1,0 +1,410 @@
+    // assets\scss\main.scss
+    @import "reset";
+    @import "utils";
+    // container
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    // header
+    .header {
+        .top-bar {
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            background-color: #000;
+            &__inner {
+                gap: 231px;
+            }
+            &__text {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                gap: 8px;
+                a {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    text-decoration-line: underline;
+                }
+            }
+            &__select {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                option {
+                    color: #000;
+                }
+            }
+        }
+        .navbar {
+            border-bottom: 1px solid #00000080;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding-top: 47px;
+            padding-bottom: 23px;
+            width: 100%;
+            &__logo {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 24px;
+                letter-spacing: 0.72px;
+            }
+            &__list {
+                list-style: none;
+                gap: 48px;
+                &.home li:first-child {
+                    border-bottom: 1px solid #00000080;
+                }
+                &.contact li:nth-child(2) {
+                    border-bottom: 1px solid #00000080;
+                }
+                &.about li:nth-child(3) {
+                    border-bottom: 1px solid #00000080;
+                }
+                &.signin li:last-child {
+                    border-bottom: 1px solid #00000080;
+                }
+            }
+            &__item {
+                text-align: center;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+            }
+            &__others {
+                gap: 24px;
+            }
+            &__form {
+                width: 243px;
+                height: 38px;
+                border-radius: 4px;
+                background: #F5F5F5;
+                position: relative;
+                label {
+                    position: absolute;
+                    right: 12px;
+                    top: 7px;
+                }
+            }
+            &__input {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 18px;
+                padding-left: 20px;
+                padding-right: 70px;
+            }
+            &__items {
+                gap: 16px;
+                button:first-child {
+                    svg {
+                        path {
+                            transition: fill .3s ease;
+                            cursor: pointer;
+                        }
+                        &:hover path {
+                            stroke: #f00;
+                            fill: #f00;
+                        }
+                    }
+                }
+            }
+            &__mobile {
+                display: none;
+                padding-right: 24px;
+                &-list {
+                    width: 70%;
+                    height: 100vh;
+                    right: 0;
+                    top: 0;
+                    background: #FAFAFA;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    padding: 10px;
+                    padding-top: 50px;
+                    position: fixed;
+                    z-index: 99999;
+                    transition: all .5s ease;
+                    transform: translateX(100%);
+                    button {
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        z-index: 1000;
+                    }
+                    ul {
+                        width: 100%;
+                        list-style: none;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        li {
+                            text-align: start;
+                            width: 100%;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 24px;
+                            border-bottom: 1px solid #00000080;
+                            padding: 10px 0;
+                        }
+                    }
+                }
+                &.active {
+                    .navbar__mobile-list {
+                        transform: translateX(0);
+                    }
+                    button {
+                        span {
+                            &:nth-child(1) {
+                                top: 50%;
+                                transform: translateY(-50%) rotate(45deg);
+                            }
+                            &:nth-child(2) {
+                                opacity: 0;
+                                transform: translateX(100%);
+                            }
+                            &:nth-child(3) {
+                                bottom: 50%;
+                                transform: translateY(50%) rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+            }
+            &__menu-btn {
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                position: relative;
+                .bg {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                span {
+                    transition: all .3s ease;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #000;
+                    &:nth-child(1) {
+                        top: 0;
+                    }
+                    &:nth-child(2) {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &:nth-child(3) {
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            .top-bar {
+                &__inner {
+                    gap: 0;
+                    justify-content: space-between;
+                }
+            }
+            .navbar {
+                &__list {
+                    display: none;
+                }
+                &__mobile {
+                    display: flex;
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .top-bar {
+                &__inner {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+                &__text {
+                    flex-direction: column;
+                    font-size: 14px;
+                }
+            }
+            .navbar {
+                &__others {
+                    display: none;
+                }
+                &__mobile {
+                    width: initial;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    
+    // header end
+    // footer
+    .footer {
+        background-color: #000;
+        color: #FAFAFA;
+        &__lists {
+            padding-top: 80px;
+            padding-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        &__list {
+            &-title:first-child {
+                font-family: 'Inter', sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 24px;
+                letter-spacing: 0.72px;
+                margin-bottom: 24px;
+            }
+            &-title {
+                font-family: 'Poppins', sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 28px;
+            }
+            &-items:first-child {
+                li:first-child {
+                    margin-bottom: 8;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 28px;
+                    a {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 28px;
+                    }
+                }
+            }
+            &-items {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            &-item {
+                form {
+                    width: 217px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        outline: none;
+                        padding-left: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        color: #FAFAFA;
+                        border-radius: 4px;
+                        border: 1.5px solid #FAFAFA;
+                        padding-right: 72px;
+                    }
+                    button {
+                        position: absolute;
+                        right: 16px;
+                        top: 12px;
+                    }
+                }
+            }
+            &-link,
+            &-item {
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+        &__list:nth-child(2) {
+            width: 175px;
+        }
+        &__list:last-child {
+            .footer__list-item:first-child {
+                span {
+                    color: rgba(250, 250, 250, 0.7);
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 18px;
+                }
+                .contents {
+                    margin-top: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        a:first-child {
+                            height: 36px;
+                        }
+                        a:last-child {
+                            height: 32px;
+                        }
+                    }
+                }
+            }
+            li:last-child {
+                margin-top: 8px;
+                ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+        &__text {
+            border-top: 1px solid #ffffff20;
+            padding-top: 16px;
+            padding-bottom: 24px;
+            color: #3d3d3d;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: center;
+            span {
+                font-size: 22px;
+            }
+        }
+    }
+    
+    // footer end
+    @media screen and (max-width: 1024px) {
+        .container {
+            max-width: 768px;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .container {
+            max-width: 500px;
+        }
+    }
+    
+    // assets\scss\main.scss
